@@ -1,0 +1,244 @@
+.hero-perfil{
+
+    margin-top:100px;
+    padding:30px;
+
+}
+
+.contenedor-perfil{
+
+    display:flex;
+    gap:30px;
+    max-width:1200px;
+    margin:auto;
+    align-items:stretch;
+
+}
+
+/*==========================
+PANEL IZQUIERDO
+==========================*/
+
+.panel-avatar{
+
+    width:280px;
+
+    border:4px solid #19A7FF;
+
+    background-color: rgba(25, 167, 255, 0.6);
+
+    border-radius:15px;
+
+    padding:15px;
+
+    text-align:center;
+
+}
+
+.avatar-principal{
+
+    width:180px;
+
+    margin-bottom:20px;
+
+}
+
+.panel-avatar h2{
+
+    font-size:28px;
+
+    margin-bottom:20px;
+
+}
+
+.lista-avatares{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+.lista-avatares img{
+
+    width:70px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.lista-avatares img:hover{
+
+    transform:scale(1.1);
+
+}
+
+/*==========================
+PANEL DERECHO
+==========================*/
+
+.panel-info{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.info-usuario{
+
+    border:4px solid #9AA400;
+
+    background-color: rgba(124, 140, 3, 0.5);
+
+    border-radius:15px;
+
+    padding:20px;
+
+}
+
+.info-usuario h1{
+
+    margin-bottom:10px;
+
+}
+
+.info-usuario p{
+
+    font-size:24px;
+
+}
+
+/*==========================
+ESTADÍSTICAS
+==========================*/
+
+.estadisticas{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    border:4px solid #F28705;
+
+     background-color: rgba(242, 135, 5, 0.5);
+
+    border-radius:15px;
+
+    padding:35px;
+
+}
+
+.progreso,
+.xp{
+
+    width:45%;
+
+}
+
+.progreso h2,
+.xp h2{
+
+    margin-bottom:30px;
+
+}
+
+.fila{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:28px;
+
+    font-size:24px;
+
+}
+
+.xp p{
+
+    margin-bottom:25px;
+
+    font-size:24px;
+
+}
+
+.mariposa-perfil{
+
+    position:absolute;
+
+    width:130px;
+
+    top:-40px;
+
+    right:-30px;
+
+}
+
+
+@media(max-width:768px){
+
+.contenedor-perfil{
+
+    flex-direction:column;
+
+}
+
+.panel-avatar{
+
+    width:100%;
+
+}
+
+.estadisticas{
+
+    flex-direction:column;
+
+    gap:40px;
+
+}
+
+.progreso,
+.xp{
+
+    width:100%;
+
+}
+
+.mariposa-perfil{
+
+    position:static;
+
+    width:90px;
+
+    margin:20px auto 0;
+
+    display:block;
+
+}
+
+.avatar-principal{
+
+    width:150px;
+
+}
+
+.lista-avatares{
+
+    grid-template-columns:repeat(3,80px);
+
+    justify-content:center;
+
+}
+
+}

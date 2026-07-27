@@ -1,0 +1,156 @@
+body{
+
+    background:
+        linear-gradient(
+            rgba(179, 241, 140, 0.95),
+            rgba(169, 250, 18, 0.25)
+        ),
+        url("img/fondo.png");
+
+        background-repeat: no-repeat;
+
+
+}
+
+/*====================================================
+CONTENIDO PRINCIPAL
+====================================================*/
+
+.articulo{
+
+    margin-top:100px;
+
+    padding:30px 6%;
+
+    min-height:calc(100vh - 180px);
+
+}
+
+/*====================================================
+TÍTULO
+====================================================*/
+
+.articulo h1{
+
+    text-align:center;
+
+    font-family:"Titulo",sans-serif;
+
+    color:#014023;
+
+    font-size:42px;
+
+    margin-bottom:40px;
+
+}
+
+/*====================================================
+CONTENIDO
+====================================================*/
+
+.contenido-articulo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:40px;
+
+    max-width:900px;
+
+    margin:0 auto;
+
+}
+
+.imagen-articulo{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.imagen-articulo img{
+
+    max-width:350px;
+
+    width:100%;
+
+    border:3px solid #222;
+
+    border-radius:8px;
+
+}
+
+.texto-articulo{
+
+    width:100%;
+
+    max-width:900px;
+
+    font-size:22px;
+
+    line-height:1.6;
+
+    text-align:justify;
+
+}
+
+/*====================================================
+IMAGEN
+====================================================*/
+
+.imagen-articulo{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.imagen-articulo img{
+
+    width:100%;
+
+    max-width:240px;
+
+    border:3px solid #222;
+
+    border-radius:8px;
+
+}
+
+/*====================================================
+RESPONSIVE 
+====================================================*/
+
+@media (max-width:768px){
+
+    .contenido-articulo{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.imagen-articulo{
+
+    order:1;
+
+}
+
+.texto-articulo{
+
+    order:2;
+
+    font-size:18px;
+
+}
+
+}
+

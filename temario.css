@@ -1,0 +1,767 @@
+/*====================================================
+  FUENTES
+====================================================*/
+
+@font-face{
+    font-family:"Texto";
+    src:url("fuentes/AllRoundGothic-Medium.ttf");
+}
+
+@font-face{
+    font-family:"Titulo";
+    src:url("fuentes/AllRoundGothic-Bold.ttf");
+}
+
+/*====================================================
+RESET
+====================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:"Texto",sans-serif;
+
+    background:
+        linear-gradient(
+            rgba(179, 241, 140, 0.822),
+            rgba(169, 250, 18, 0.25)
+        );
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-height:100vh;
+
+}
+
+/* HEADER */
+.header{
+
+    position:fixed;
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:70px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 20px;
+
+    z-index:1000;
+
+}
+
+.acciones-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.menu-hamburguesa{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 45px;
+    height: 45px;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    font-size: 30px;
+    padding: 0;
+    display: none;
+
+}
+
+/*====================================================
+  BOTONES GENERALES
+=====================================================*/
+
+.btn{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    background:#7C8C03;
+
+    border:3px solid black;
+
+    border-radius:25px;
+
+    text-decoration:none;
+
+    color:black;
+
+    font-family:"Texto";
+
+    transition:.3s;
+
+    font-size:15px;
+
+
+}
+
+.btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+.btn:active{
+
+    transform:scale(.95);
+
+}
+
+.btn-accesibilidad {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-accesibilidad img {
+    width: 40px;
+}
+
+.btn-accesibilidad:hover {
+    transform: scale(1.1);
+}
+
+.opcion img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.logo{
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+
+    background:white;
+
+    padding:8px;
+
+    border:5px solid #7C8C03;
+
+    object-fit:cover;
+
+}
+
+/* Color naranja específico para Explora */
+.header-verde {
+    background-color: #7C8C03; 
+}
+
+/* Menú central */
+.nav-menu {
+    margin-left: auto;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: black;
+    font-family: "Texto", sans-serif;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.activo-menu{
+    background:#FAD100;
+    border: #FAD100;
+    font-weight:bold;
+}
+
+main{
+
+    flex:1;
+
+}
+
+/* ============================================================
+   3. ASISTENTE DE IA FIJO (BOTÓN MARIPOSA)
+   ============================================================ */
+.avatar-mariposa {
+    position: fixed;
+    right:20px;
+    bottom:150px;
+    z-index: 3000;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.avatar-mariposa:hover {
+    transform: scale(1.1);
+}
+
+.mariposa-imagen {
+    width: 100px;          /* Ajusta según el tamaño de tu imagen */
+    height: auto;
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3)); /* Sombra para que resalte */
+}
+
+/* ============================================================
+   4. POP-UP CHAT DE IA (ESTILO BURBUJA)
+   ============================================================ */
+.popup-chat {
+    display: none; /* Se activa con JS */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 4000;
+}
+
+.chat-burbuja {
+    background-color: white;
+    width:90%;
+    max-width:380px;    border: 8px solid #12A3F7; /* Borde azul grueso */
+    border-radius: 35px;
+    padding: 25px;
+    position: relative;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+/* Mariposa que sobresale arriba a la derecha */
+.mariposa-decorativa-chat {
+    width: 65px;
+    position: absolute;
+    top: -40px;
+    right: 5px;
+}
+
+.cerrar-chat {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #888;
+}
+
+.chat-area-texto {
+    height: 160px;
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 12px;
+    margin: 20px 0 15px 0;
+    overflow-y: auto;
+    text-align: left;
+    font-size: 14px;
+}
+
+.pregunta-chat {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+
+.btn-enviar-chat {
+    background: #12A3F7;
+    border: none;
+    color: white;
+    padding: 0 18px;
+    cursor: pointer;
+    font-family: "Titulo", sans-serif;
+}
+
+/*====================================================
+CONTENIDO PRINCIPAL
+====================================================*/
+
+.articulo{
+
+    margin-top:100px;
+
+    padding:30px 6%;
+
+    min-height:calc(100vh - 180px);
+
+}
+
+/*====================================================
+TÍTULO
+====================================================*/
+
+.articulo h1{
+
+    text-align:center;
+
+    font-family:"Titulo",sans-serif;
+
+    color:#014023;
+
+    font-size:42px;
+
+    margin-bottom:40px;
+
+}
+
+/*====================================================
+CONTENIDO
+====================================================*/
+
+.contenido-articulo{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:40px;
+
+    max-width:900px;
+
+    margin:0 auto;
+
+}
+
+.imagen-articulo{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.imagen-articulo img{
+
+    max-width:350px;
+
+    width:100%;
+
+    border:3px solid #222;
+
+    border-radius:8px;
+
+}
+
+.texto-articulo{
+
+    width:100%;
+
+    max-width:900px;
+
+    font-size:22px;
+
+    line-height:1.6;
+
+    text-align:justify;
+
+}
+
+/*====================================================
+IMAGEN
+====================================================*/
+
+.imagen-articulo{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.imagen-articulo img{
+
+    width:100%;
+
+    max-width:240px;
+
+    border:3px solid #222;
+
+    border-radius:8px;
+
+}
+
+/*====================================================
+TEXTO
+====================================================*/
+
+.texto-articulo{
+
+    font-size:22px;
+
+    line-height:1.6;
+
+    color:#111;
+
+}
+
+.texto-articulo h2{
+
+    margin:25px 0 15px;
+
+    color:#014023;
+
+    font-family:"Titulo",sans-serif;
+
+    font-size:28px;
+
+}
+
+/*====================================================
+BOTÓN VOLVER
+====================================================*/
+
+.contenedor-volver{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:40px;
+
+}
+
+.btn-volver{
+
+    background:#9AA400;
+
+    color:black;
+
+    border:2px solid black;
+
+    border-radius:10px;
+
+    padding:12px 35px;
+
+    font-size:24px;
+
+    font-family:"Titulo",sans-serif;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.btn-volver:hover{
+
+    background:#FAD100;
+
+    transform:scale(1.05);
+
+}
+
+/* ============================================================
+   6. FOOTER (Versión Institucional)
+   ============================================================ */
+/* FOOTER */
+.footer{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-start;
+
+    gap:30px;
+
+    padding:30px;
+
+    background:#014023;
+
+    color:white;
+
+    font-size:14px;
+
+    text-align:center;
+
+}
+
+/* ============================================================
+   7. POP-UP ACCESIBILIDAD (EL ORIGINAL)
+   ============================================================ */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+}
+
+.popup-contenido {
+    background: #12A3F7; /* Caja azul sólida */
+    width: 220px;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.opciones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* CADA OPCIÓN */
+.opcion {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.opcion:hover {
+    transform: scale(1.1);
+}
+
+/* ICONOS SIMPLES (puedes luego reemplazar por imágenes) */
+.icono {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+/* ICONOS ESPECÍFICOS */
+.contraste {
+    background: linear-gradient(to right, black 50%, white 50%);
+    border-radius: 50%;
+}
+
+.libro {
+    border-radius: 5px;
+}
+
+.lector {
+    border-radius: 50%;
+}
+
+.ojo {
+    border-radius: 50%;
+}
+
+h1, h2, h3 {
+    font-family: "Titulo", sans-serif;
+    font-size: 32px
+}
+
+/*====================================================
+RESPONSIVE 
+====================================================*/
+
+@media (max-width:768px){
+
+.header{
+
+    padding:10px 15px;
+
+    height:auto;
+
+    flex-wrap:wrap;
+
+}
+
+.logo{
+
+    width:55px;
+    height:55px;
+
+    margin:0;
+
+}
+
+.menu-hamburguesa{
+
+    display:block;
+
+    font-size:30px;
+
+}
+
+.nav-menu{
+
+    display:none;
+
+    position:absolute;
+
+    top:70px;
+
+    left:0;
+
+    width:100%;
+
+    background:#7C8C03;
+
+    margin:0;
+
+    flex-grow:0;
+
+}
+
+.nav-menu.activo{
+
+    display:block;
+
+}
+
+.nav-menu ul{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:20px 0;
+
+}
+
+.nav-menu a{
+
+    display:block;
+
+    width:180px;
+
+    text-align:center;
+
+}
+
+
+
+ .avatar-mariposa{
+
+        right:15px;
+
+        bottom:90px;
+
+    }
+
+    .mariposa-imagen{
+
+        width:75px;
+
+    }
+
+    .contenido-articulo{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.imagen-articulo{
+
+    order:1;
+
+}
+
+.texto-articulo{
+
+    order:2;
+
+    font-size:18px;
+
+}
+
+.contenedor-volver{
+
+    justify-content:center;
+
+}
+
+.btn-volver{
+
+    font-size:20px;
+
+    padding:10px 30px;
+
+}
+
+.footer{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:20px;
+
+}
+
+.footer div{
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.footer p{
+
+    text-align:center;
+
+}
+
+}
+

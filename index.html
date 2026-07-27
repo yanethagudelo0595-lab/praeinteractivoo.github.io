@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoAventura</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+    
+        <img src="img/ZarigüellaActualizado_19_Abril.png" alt="Logo" class="logo">
+
+    <button class="btn-accesibilidad" onclick="abrirAccesibilidad()">
+        <img src="iconos/accessibility.png" alt="Accesibilidad">
+    </button>
+
+    </header>
+
+<!-- POPUP -->
+<div id="popup-accesibilidad" class="popup">
+    
+    <div class="popup-contenido">
+
+        <!-- BOTÓN CERRAR -->
+        <span class="cerrar" onclick="cerrarAccesibilidad()">✖</span>
+
+        <!-- OPCIONES -->
+        <div class="opciones">
+
+            <div class="opcion">
+                <h2>A+</h2>
+                <p>Aumentar letra</p>
+            </div>
+
+            <div class="opcion">
+                <h2>A-</h2>
+                <p>Disminuir letra</p>
+            </div>
+
+            <div class="opcion">
+                <div class="icono contraste"></div>
+                <p>Contraste</p>
+            </div>
+
+            <div class="opcion">
+                <img src="iconos/book_828370.png" alt="IconoDislexia">
+                <p>Dislexia</p>
+            </div>
+
+            <div class="opcion">
+                <img src="iconos/ear_748202.png" alt="IconoLector">
+                <p>Lector</p>
+            </div>
+
+            <div class="opcion">
+                <img src="iconos/eye_4126162.png" alt="IconoDaltonismo">
+                <p>Daltonismo</p>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+    <!-- SECCIÓN PRINCIPAL -->
+    <main class="hero">
+
+        <!-- TEXTO -->
+        <div class="mensaje">
+            <h1>¡Hey, aquí empieza la Eco-aventura!</h1>
+        </div>
+
+        <!-- LOGIN -->
+        <div class="login-box">
+
+            <!-- LADO IZQUIERDO -->
+            <div class="lado-izq">
+                <input type="text" id="usuario" placeholder="Usuario">
+                <input type="password" id="password" placeholder="Contraseña">
+
+                <p id="mensaje-error" style="color: red;"></p>
+
+                <button class="btn btn-ingreso" onclick="login()">¡Ingresa!</button>
+        </div>
+
+        <!-- LÍNEA DIVISORIA -->
+        <div class="linea"></div>
+
+        <!-- LADO DERECHO -->
+        <div class="lado-der">
+            <p>Ingresa también con</p>
+
+            <div class="social">
+                <button class="accesoGoogle">
+                <img src="iconos/google.png" alt="accesoGoogle">
+                </button>
+                
+                <button class="accesoapple">
+                <img src="iconos/apple.png" alt="accesoApple">
+                </button>
+        </div>
+
+        <p>Ó</p>
+
+        <a href="registro.html" class="btn btn-registro">¡Regístrate!</a>
+    </div>
+
+</div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+    <div class="footer-col">
+        <p>Institución Educativa Rafael J. Mejía</p>
+        <p>© 2026 - Grupo 8</p>
+    </div>
+
+    <div class="footer-col">
+        <p>Acerca de nosotros</p>
+        <p>Política de privacidad</p>
+        <p>Tratamiento de datos</p>
+    </div>
+
+    <div class="footer-col">
+        <p>Visítanos:</p>
+        <p>rafaeljmejia.master2000.net</p>
+    </div>
+
+</footer>
+
+<button class="avatar-mariposa" onclick="abrirChat()">
+    <img src="img/butterfly_883748.png" alt="Asistente IA" class="mariposa-imagen">
+</button>
+
+<div id="popup-chat-ia" class="popup-chat">
+    <div class="chat-burbuja">
+        <span class="cerrar-chat" onclick="cerrarChat()" style="position: absolute; right: 20px; top: 15px; cursor: pointer; font-size: 20px;">✖</span>
+        
+        <img src="img/butterfly_883748.png" alt="" style="width: 50px; position: absolute; top: -30px; right: 10px;">
+
+        <div class="chat-contenido" style="margin-top: 20px;">
+            <div class="chat-area-texto" style="height: 150px; border: 1px solid #eee; margin-bottom: 15px; border-radius: 10px; padding: 10px; overflow-y: auto;">
+                <p><strong>Asistente:</strong> ¡Hola! Soy tu guía ambiental. ¿En qué puedo ayudarte hoy?</p>
+            </div>
+
+            <p style="margin-bottom: 8px; font-family: 'Texto';">¿Qué quieres saber hoy?</p>
+            
+            <div style="display: flex; border: 3px solid #12A3F7; border-radius: 20px; overflow: hidden;">
+                <input type="text" placeholder="Escribe aquí..." style="flex: 1; border: none; padding: 10px; outline: none;">
+                <button style="background: #12A3F7; border: none; color: white; padding: 0 15px; cursor: pointer;">Enviar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function abrirAccesibilidad() {
+    document.getElementById("popup-accesibilidad").style.display = "flex";
+}
+
+function cerrarAccesibilidad() {
+    document.getElementById("popup-accesibilidad").style.display = "none";
+}
+</script>
+
+<script>
+function login() {
+    // obtener valores
+    let usuario = document.getElementById("usuario").value;
+    let password = document.getElementById("password").value;
+    let mensaje = document.getElementById("mensaje-error");
+
+
+    // usuario de prueba (simulación)
+    let usuarioCorrecto = "admin";
+    let passwordCorrecto = "1234";
+
+    // validación
+    if (usuario === usuarioCorrecto && password === passwordCorrecto) {
+        alert("¡Bienvenido!");
+        
+        // redirige al home
+        window.location.href = "index.html";
+    } else {
+        mensaje.textContent = "Usuario o contraseña incorrectos"
+    }
+}
+</script>
+
+<script>
+function abrirChat() {
+    document.getElementById("popup-chat-ia").style.display = "flex";
+}
+
+function cerrarChat() {
+    document.getElementById("popup-chat-ia").style.display = "none";
+}
+
+// Opcional: Cerrar el chat si se hace clic fuera de la burbuja
+window.onclick = function(event) {
+    let popup = document.getElementById("popup-chat-ia");
+    if (event.target == popup) {
+        cerrarChat();
+    }
+}
+</script>
+
+</body>
+</html>

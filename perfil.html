@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Artículo - EcoAventura</title>
+
+    <link rel="stylesheet" href="estilosGenerales.css">
+    <link rel="stylesheet" href="perfil.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header header-verde">
+
+        <a href="index.html">
+
+            <img src="img/ZarigüellaActualizado_19_Abril.png" alt="Logo EcoAventura" class="logo">
+
+        </a>
+
+        <nav class="nav-menu">
+
+            <ul>
+
+                <li><a href="curiosea.html">Curiosea</a></li>
+
+                <li><a href="explora.html">Explora</a></li>
+
+                <li><a href="diviertete.html">Diviértete</a></li>
+
+                <li><a href="perfil.html" class="activo-menu">Mi Perfil</a></li>
+
+            </ul>
+
+        </nav>
+
+        <div class="acciones-header">
+
+            <button class="menu-hamburguesa" onclick="abrirMenu()">
+                ☰
+            </button>
+
+            <button class="btn-accesibilidad" onclick="abrirAccesibilidad()">
+
+                <img src="iconos/accessibility.png" alt="Accesibilidad">
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ================= CONTENIDO ================= -->
+
+<main class="hero-perfil">
+
+    <div class="contenedor-perfil">
+
+        <!-- PANEL IZQUIERDO -->
+        <section class="panel-avatar">
+
+            <img src="iconos/avatar1.png"
+                 class="avatar-principal"
+                 id="avatarPrincipal">
+
+            <h2>Elige tu Ávatar</h2>
+
+            <div class="lista-avatares">
+
+                <img src="iconos/avatar1.png"
+                     onclick="cambiarAvatar(this)">
+
+                <img src="iconos/avatar2.png"
+                     onclick="cambiarAvatar(this)">
+
+                <img src="iconos/avatar3.png"
+                     onclick="cambiarAvatar(this)">
+
+                <img src="iconos/avatar4.png"
+                     onclick="cambiarAvatar(this)">
+
+                <img src="iconos/avatar5.png"
+                     onclick="cambiarAvatar(this)">
+
+                <img src="iconos/avatar6.png"
+                     onclick="cambiarAvatar(this)">
+
+                <img src="iconos/avatar7.png"
+                     onclick="cambiarAvatar(this)">
+
+                <img src="iconos/avatar8.png"
+                     onclick="cambiarAvatar(this)">
+
+                <img src="iconos/avatar9.png"
+                     onclick="cambiarAvatar(this)">
+
+            </div>
+
+        </section>
+
+
+        <!-- PANEL DERECHO -->
+        <section class="panel-info">
+
+            <div class="info-usuario">
+
+                <h1>María del Mar, Grado 7-A</h1>
+
+                <p>Nombre de usuario: Princesa Ninja</p>
+
+                <p>XP Level: 154862</p>
+
+            </div>
+
+
+            <div class="estadisticas">
+
+                <div class="progreso">
+
+                    <h2>Progreso</h2>
+
+                    <div class="fila">
+                        <span>Escáner Realidad Aumentada</span>
+                        <strong>12456</strong>
+                    </div>
+
+                    <div class="fila">
+                        <span>Trivias</span>
+                        <strong>45218</strong>
+                    </div>
+
+                    <div class="fila">
+                        <span>Mini Juego</span>
+                        <strong>23215</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="xp">
+
+                    <h2>XP Level</h2>
+
+                    <p>Puntaje: 154862</p>
+
+                    <p>Nivel: Observemos</p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </div>
+
+</main>
+
+    <!-- ================= ASISTENTE IA ================= -->
+
+    <button class="avatar-mariposa" onclick="abrirChat()">
+
+        <img src="img/butterfly_883748.png" alt="Asistente IA" class="mariposa-imagen">
+
+    </button>
+
+    <!-- ================= POPUP CHAT ================= -->
+
+    <div id="popup-chat-ia" class="popup-chat">
+
+        <div class="chat-burbuja">
+
+            <span class="cerrar-chat" onclick="cerrarChat()">✖</span>
+
+            <img src="img/butterfly_883748.png" class="mariposa-decorativa-chat" alt="">
+
+            <div class="chat-contenido">
+
+                <div class="chat-area-texto">
+
+                    <p>
+
+                        <strong>Asistente:</strong>
+
+                        ¡Hola! ¿Qué quieres aprender hoy?
+
+                    </p>
+
+                </div>
+
+                <p class="pregunta-chat">
+
+                    ¿Qué quieres saber?
+
+                </p>
+
+                <div class="input-enviar-contenedor">
+
+                    <input type="text" class="input-chat-real" placeholder="Escribe aquí...">
+
+                    <button class="btn-enviar-chat">
+
+                        Enviar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= POPUP ACCESIBILIDAD ================= -->
+
+    <div id="popup-accesibilidad" class="popup">
+
+        <div class="popup-contenido">
+
+            <span class="cerrar" onclick="cerrarAccesibilidad()">✖</span>
+
+            <div class="opciones">
+
+                <div class="opcion">
+
+                    <h2>A+</h2>
+
+                    <p>Aumentar letra</p>
+
+                </div>
+
+                <div class="opcion">
+
+                    <h2>A-</h2>
+
+                    <p>Disminuir letra</p>
+
+                </div>
+
+                <div class="opcion">
+
+                    <div class="icono contraste"></div>
+
+                    <p>Contraste</p>
+
+                </div>
+
+                <div class="opcion">
+
+                    <img src="iconos/book_828370.png" alt="">
+
+                    <p>Dislexia</p>
+
+                </div>
+
+                <div class="opcion">
+
+                    <img src="iconos/ear_748202.png" alt="">
+
+                    <p>Lector</p>
+
+                </div>
+
+                <div class="opcion">
+
+                    <img src="iconos/eye_4126162.png" alt="">
+
+                    <p>Daltonismo</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div>
+
+            <p>Institución Educativa Rafael J. Mejía</p>
+
+            <p>Sabaneta, Antioquia, Colombia</p>
+
+            <p>www.rafaeljmejia.master2000.net</p>
+
+        </div>
+
+        <div>
+
+            <p>Acerca de nosotros</p>
+
+            <p>Política de privacidad | Tratamiento de datos</p>
+
+        </div>
+
+        <div>
+
+            <p>© 2026 - Grupo 8</p>
+
+            <p>Todos los derechos reservados</p>
+
+        </div>
+
+    </footer>
+
+    <script>
+
+        function abrirMenu(){
+
+            document.querySelector(".nav-menu").classList.toggle("activo");
+
+        }
+
+        function abrirAccesibilidad(){
+
+            document.getElementById("popup-accesibilidad").style.display="flex";
+
+        }
+
+        function cerrarAccesibilidad(){
+
+            document.getElementById("popup-accesibilidad").style.display="none";
+
+        }
+
+        function abrirChat(){
+
+            document.getElementById("popup-chat-ia").style.display="flex";
+
+        }
+
+        function cerrarChat(){
+
+            document.getElementById("popup-chat-ia").style.display="none";
+
+        }
+
+        window.onclick = function(event) {
+
+    let chat = document.getElementById("popup-chat-ia");
+    let acc = document.getElementById("popup-accesibilidad");
+
+    if(event.target == chat) cerrarChat();
+
+    if(event.target == acc) cerrarAccesibilidad();
+
+}
+
+function cambiarAvatar(avatar){
+
+    document.getElementById("avatarPrincipal").src = avatar.src;
+
+}
+
+    </script>
+
+</body>
+
+</html>

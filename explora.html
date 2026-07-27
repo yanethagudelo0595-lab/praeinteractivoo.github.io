@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explora la RA - EcoAventura</title>
+    <link rel="stylesheet" href="explora.css"> 
+</head>
+<body>
+
+    <header class="header header-naranja">
+        <a href="index.html">
+            <img src="img/ZarigüellaActualizado_19_Abril.png" alt="Logo" class="logo">
+        </a>
+
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="curiosea.html">Curiosea</a></li>
+                <li><a href="explora.html" class="activo-menu">Explora</a></li>
+                <li><a href="diviertete.html">Diviértete</a></li>
+                <li><a href="perfil.html">Mi Perfil</a></li>
+            </ul>
+        </nav>
+
+        <div class="acciones-header">
+
+            <button class="menu-hamburguesa" onclick="abrirMenu()">
+            ☰
+            </button>
+
+            <button class="btn-accesibilidad" onclick="abrirAccesibilidad()">
+            <img src="iconos/accessibility.png" alt="Accesibilidad">
+            </button>
+
+        </div>
+    </header>
+
+    <main class="hero-explora">
+        <h1 class="titulo-explora">¡Exploremos Juntos la RA!</h1>
+
+        <div class="contenido-explora">
+            <div class="columna-izquierda">
+                <button class="qr" onclick="abrirqr()">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://www.google.com" alt="Código QR para RA" class="qr-code">
+                </button>
+                
+                <p>Escanea el código QR aquí para explorar la Realidad Aumentada</p>
+                
+            </div>
+
+            <div class="columna-derecha">
+                <div class="input-codigo-contenedor">
+                    <input type="text" placeholder="Ingresa el código" class="input-codigo-real">
+                </div>
+                <p>Ó ingresa el código en la imagen para explorar el entorno.</p>
+            </div>
+        </div>
+    </main>
+
+    <button class="avatar-mariposa" onclick="abrirChat()">
+        <img src="img/butterfly_883748.png" alt="Asistente IA" class="mariposa-imagen">
+    </button>
+
+    <div id="popup-chat-ia" class="popup-chat">
+        <div class="chat-burbuja">
+            <span class="cerrar-chat" onclick="cerrarChat()">✖</span>
+            
+            <img src="img/butterfly_883748.png" alt="" class="mariposa-decorativa-chat">
+
+            <div class="chat-contenido">
+                <div class="chat-area-texto">
+                    <p><strong>Asistente:</strong> ¡Hola! Soy tu guía ambiental. ¿En qué puedo ayudarte hoy?</p>
+                </div>
+
+                <p class="pregunta-chat">¿Qué quieres saber hoy?</p>
+                
+                <div class="input-enviar-contenedor">
+                    <input type="text" placeholder="Escribe aquí..." class="input-chat-real">
+                    <button class="btn-enviar-chat">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-accesibilidad" class="popup">
+        <div class="popup-contenido">
+            <span class="cerrar" onclick="cerrarAccesibilidad()">✖</span>
+            <div class="opciones">
+                <div class="opcion"><h2>A+</h2><p>Aumentar letra</p></div>
+                <div class="opcion"><h2>A-</h2><p>Disminuir letra</p></div>
+                <div class="opcion"><div class="icono contraste"></div><p>Contraste</p></div>
+                <div class="opcion"><img src="iconos/book_828370.png" alt="Dislexia"><p>Dislexia</p></div>
+                <div class="opcion"><img src="iconos/ear_748202.png" alt="Lector"><p>Lector</p></div>
+                <div class="opcion"><img src="iconos/eye_4126162.png" alt="Daltonismo"><p>Daltonismo</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div>
+            <p>Institución Educativa Rafael J. Mejía</p>
+            <p>Sabaneta, Antioquia, Colombia</p>
+            <p>www.rafaeljmejia.master2000.net</p>
+        </div>
+
+        <div>
+            <p>Acerca de nosotros</p>
+            <p>Política de privacidad | Tratamiento de datos</p>
+        </div>
+
+        <div>
+            <p>© 2026 - Grupo 8</p>
+            <p>Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script>
+
+        //menu hamburguesa
+
+        function abrirMenu(){
+
+        document.querySelector(".nav-menu").classList.toggle("activo");
+
+        }
+
+        // Accesibilidad
+        function abrirAccesibilidad() {
+            document.getElementById("popup-accesibilidad").style.display = "flex";
+        }
+        function cerrarAccesibilidad() {
+            document.getElementById("popup-accesibilidad").style.display = "none";
+        }
+
+        // Chat IA
+        function abrirChat() {
+            document.getElementById("popup-chat-ia").style.display = "flex";
+        }
+        function cerrarChat() {
+            document.getElementById("popup-chat-ia").style.display = "none";
+        }
+
+        // Cerrar al hacer clic fuera de los pop-ups
+        window.onclick = function(event) {
+            let chat = document.getElementById("popup-chat-ia");
+            let acc = document.getElementById("popup-accesibilidad");
+            if (event.target == chat) cerrarChat();
+            if (event.target == acc) cerrarAccesibilidad();
+        }
+
+     // qr
+        function abrirqr() {
+            window.location.href = "explora2.html"
+        }
+    </script>
+
+</body>
+</html>

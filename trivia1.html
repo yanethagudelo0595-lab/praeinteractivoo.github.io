@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Artículo - EcoAventura</title>
+
+    <link rel="stylesheet" href="estilosGenerales.css">
+    <link rel="stylesheet" href="trivia1.css">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header header-verde">
+
+        <a href="index.html">
+
+            <img src="img/ZarigüellaActualizado_19_Abril.png" alt="Logo EcoAventura" class="logo">
+
+        </a>
+
+        <nav class="nav-menu">
+
+            <ul>
+
+                <li><a href="curiosea.html" class="activo-menu">Curiosea</a></li>
+
+                <li><a href="explora.html">Explora</a></li>
+
+                <li><a href="diviertete.html">Diviértete</a></li>
+
+                <li><a href="perfil.html">Mi Perfil</a></li>
+
+            </ul>
+
+        </nav>
+
+        <div class="acciones-header">
+
+            <button class="menu-hamburguesa" onclick="abrirMenu()">
+                ☰
+            </button>
+
+            <button class="btn-accesibilidad" onclick="abrirAccesibilidad()">
+
+                <img src="iconos/accessibility.png" alt="Accesibilidad">
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ================= CONTENIDO ================= -->
+
+    <main class="articulo">
+
+        <h1>¡Identifica éstas especies!</h1>
+
+        <section class="contenido-articulo">
+
+            <!-- trivia -->
+
+            <div class="imagen-articulo">
+
+                <iframe src="https://embed.kahoot.it/2c1c6a52-7cfa-4533-a6ec-b8ca079a89fc" width=620 height=280></iframe>
+
+            </div>
+
+            <!-- Texto -->
+
+            <div class="texto-articulo">
+
+                <p>
+
+                    ¡Hola! Estas son algunas de las especies que nos rodean diariamente.
+                    
+                    ¿Puedes clasificarlas?
+
+                </p>
+
+                <br>
+
+                
+
+            </div>
+
+        </section>
+
+        <div class="contenedor-volver">
+            <a href="curiosea.html" class="btn volver">
+
+        Volver
+
+            </a>
+        </div>
+    </main>
+
+    <!-- ================= ASISTENTE IA ================= -->
+
+    <button class="avatar-mariposa" onclick="abrirChat()">
+
+        <img src="img/butterfly_883748.png" alt="Asistente IA" class="mariposa-imagen">
+
+    </button>
+
+    <!-- ================= POPUP CHAT ================= -->
+
+    <div id="popup-chat-ia" class="popup-chat">
+
+        <div class="chat-burbuja">
+
+            <span class="cerrar-chat" onclick="cerrarChat()">✖</span>
+
+            <img src="img/butterfly_883748.png" class="mariposa-decorativa-chat" alt="">
+
+            <div class="chat-contenido">
+
+                <div class="chat-area-texto">
+
+                    <p>
+
+                        <strong>Asistente:</strong>
+
+                        ¡Hola! ¿Qué quieres aprender hoy?
+
+                    </p>
+
+                </div>
+
+                <p class="pregunta-chat">
+
+                    ¿Qué quieres saber?
+
+                </p>
+
+                <div class="input-enviar-contenedor">
+
+                    <input type="text" class="input-chat-real" placeholder="Escribe aquí...">
+
+                    <button class="btn-enviar-chat">
+
+                        Enviar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= POPUP ACCESIBILIDAD ================= -->
+
+    <div id="popup-accesibilidad" class="popup">
+
+        <div class="popup-contenido">
+
+            <span class="cerrar" onclick="cerrarAccesibilidad()">✖</span>
+
+            <div class="opciones">
+
+                <div class="opcion">
+
+                    <h2>A+</h2>
+
+                    <p>Aumentar letra</p>
+
+                </div>
+
+                <div class="opcion">
+
+                    <h2>A-</h2>
+
+                    <p>Disminuir letra</p>
+
+                </div>
+
+                <div class="opcion">
+
+                    <div class="icono contraste"></div>
+
+                    <p>Contraste</p>
+
+                </div>
+
+                <div class="opcion">
+
+                    <img src="iconos/book_828370.png" alt="">
+
+                    <p>Dislexia</p>
+
+                </div>
+
+                <div class="opcion">
+
+                    <img src="iconos/ear_748202.png" alt="">
+
+                    <p>Lector</p>
+
+                </div>
+
+                <div class="opcion">
+
+                    <img src="iconos/eye_4126162.png" alt="">
+
+                    <p>Daltonismo</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div>
+
+            <p>Institución Educativa Rafael J. Mejía</p>
+
+            <p>Sabaneta, Antioquia, Colombia</p>
+
+            <p>www.rafaeljmejia.master2000.net</p>
+
+        </div>
+
+        <div>
+
+            <p>Acerca de nosotros</p>
+
+            <p>Política de privacidad | Tratamiento de datos</p>
+
+        </div>
+
+        <div>
+
+            <p>© 2026 - Grupo 8</p>
+
+            <p>Todos los derechos reservados</p>
+
+        </div>
+
+    </footer>
+
+    <script>
+
+        function abrirMenu(){
+
+            document.querySelector(".nav-menu").classList.toggle("activo");
+
+        }
+
+        function abrirAccesibilidad(){
+
+            document.getElementById("popup-accesibilidad").style.display="flex";
+
+        }
+
+        function cerrarAccesibilidad(){
+
+            document.getElementById("popup-accesibilidad").style.display="none";
+
+        }
+
+        function abrirChat(){
+
+            document.getElementById("popup-chat-ia").style.display="flex";
+
+        }
+
+        function cerrarChat(){
+
+            document.getElementById("popup-chat-ia").style.display="none";
+
+        }
+
+        window.onclick = function(event) {
+
+    let chat = document.getElementById("popup-chat-ia");
+    let acc = document.getElementById("popup-accesibilidad");
+
+    if(event.target == chat) cerrarChat();
+
+    if(event.target == acc) cerrarAccesibilidad();
+
+}
+
+    </script>
+
+</body>
+
+</html>
